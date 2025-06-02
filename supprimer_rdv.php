@@ -1,15 +1,12 @@
 <?php
-session_start();
-require 'config.php';
-if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
-    header("Location: login.php");
-    exit;
-}
+require_once 'config.php';
+
 if (isset($_GET['id'])) {
-    $id = intval($_GET['id']);
+    $id = $_GET['id'];
     $stmt = $pdo->prepare("DELETE FROM rendezvous WHERE id = ?");
     $stmt->execute([$id]);
 }
-header("Location: admin_rendezvous.php");
-exit;
+
+header("Location: admin/admin_rendezvous.php");
+exit();
 ?>

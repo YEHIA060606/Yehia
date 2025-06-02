@@ -40,17 +40,34 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       width: 100%;
       max-width: 400px;
     }
+    a {
+      color: #ffc107;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <div class="form-box">
-    <h2 class="text-center mb-4">Connexion</h2>
-    <?php if (isset($error)) echo "<p class='text-danger'>$error</p>"; ?>
-    <form method="POST">
-      <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
-      <input type="password" name="password" class="form-control mb-3" placeholder="Mot de passe" required>
-      <button type="submit" class="btn btn-primary w-100">Se connecter</button>
-    </form>
-  </div>
+
+<a href="/Yehia/index.php" style="position: fixed; top: 10px; left: 10px; background-color: #444; color: white; padding: 10px; border-radius: 5px; text-decoration: none;">
+    ⬅ Retour à l'accueil
+</a>
+
+<div class="form-box">
+  <h2 class="text-center mb-4">Connexion</h2>
+  <?php if (isset($error)) echo "<p class='text-danger'>$error</p>"; ?>
+  <form method="POST">
+    <input type="email" name="email" class="form-control mb-3" placeholder="Email" required>
+    <input type="password" name="password" class="form-control mb-2" placeholder="Mot de passe" required>
+    <div class="mb-3 text-end">
+      <a href="#">Mot de passe oublié ?</a>
+    </div>
+    <button type="submit" class="btn btn-primary w-100 mb-3">Se connecter</button>
+    <p class="text-center">Vous n'avez pas de compte ? <a href="register.php">Créer un compte</a></p>
+  </form>
+</div>
+
 </body>
 </html>

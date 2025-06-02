@@ -5,12 +5,9 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'client') {
     exit;
 }
 require '../config.php';
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
+
 $user_id = $_SESSION['user_id'];
-$stmt = $pdo->prepare("SELECT date_rdv, heure_rdv, prestation FROM rendezvous WHERE user_id = ? ORDER BY date_rdv");
+$stmt = $pdo->prepare("SELECT id, date_rdv, heure_rdv, prestation FROM rendezvous WHERE user_id = ? ORDER BY date_rdv");
 $stmt->execute([$user_id]);
 $rendezvous = $stmt->fetchAll();
 ?>
@@ -26,6 +23,9 @@ $rendezvous = $stmt->fetchAll();
       color: white;
       padding: 30px;
     }
+    .btn-sm {
+      margin: 0 5px;
+    }
   </style>
 </head>
 <body>
@@ -34,25 +34,34 @@ $rendezvous = $stmt->fetchAll();
     <?php if (count($rendezvous) === 0): ?>
       <p class="text-center">Aucun rendez-vous pour l'instant.</p>
     <?php else: ?>
-      <table class="table table-dark table-striped">
+      <table class="table table-dark table-striped text-center">
         <thead>
           <tr>
             <th>Date</th>
             <th>Heure</th>
             <th>Prestation</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <?php foreach ($rendezvous as $rdv): ?>
             <tr>
-              <td><?= $rdv['date_rdv'] ?></td>
-              <td><?= $rdv['heure_rdv'] ?></td>
+              <td><?= htmlspecialchars($rdv['date_rdv']) ?></td>
+              <td><?= htmlspecialchars($rdv['heure_rdv']) ?></td>
               <td><?= htmlspecialchars($rdv['prestation']) ?></td>
+              <td>
+                <a href="modifier_rdv.php?id=<?= $rdv['id'] ?>" class="btn btn-sm btn-warning">Modifier</a>
+                <a href="../supprimer_rdv.php?id=<?= $rdv['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Confirmer la suppression ?')">Annuler</a>
+              </td>
             </tr>
           <?php endforeach; ?>
         </tbody>
       </table>
     <?php endif; ?>
+
+    <div class="text-center mt-4">
+        <a href="../welcome.php" class="btn btn-outline-light">Retour à l'accueil</a>
+    </div>
   </div>
 </body>
 </html>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -6,47 +9,51 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background-color: #111;
+      background-color: #181818;
       color: white;
-      padding: 30px;
+      font-family: Arial, sans-serif;
     }
-    .card img {
+    .card {
+      background-color: #262626;
+      height: 100%;
+    }
+    .card-img-top{
       height: 200px;
       object-fit: cover;
     }
   </style>
 </head>
-<body>
-  <h2 class="text-center mb-4">Nos Prestations</h2>
+<body class="p-4">
   <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-4 mb-4">
-        <div class="card bg-dark text-white">
+    <h1 class="mb-4 text-center">Nos Prestations</h1>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card text-white mb-3">
           <img src="assets/coupe.jpg" class="card-img-top" alt="Coupe">
           <div class="card-body">
-            <h5 class="card-title">Coupe Homme</h5>
-            <p class="card-text">Une coupe moderne pour un style propre et soigné.</p>
-            <p><strong>Prix : 15€</strong></p>
+            <h5 class="card-title">Coupe classique</h5>
+            <p class="card-text">Prix : 15€</p>
+            <a href="client/rendezvous.php" class="btn btn-warning">Réserver</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="card bg-dark text-white">
+      <div class="col-md-4">
+        <div class="card text-white mb-3">
           <img src="assets/barbe.jpg" class="card-img-top" alt="Barbe">
           <div class="card-body">
-            <h5 class="card-title">Entretien de Barbe</h5>
-            <p class="card-text">Taillage et soin professionnel de votre barbe.</p>
-            <p><strong>Prix : 10€</strong></p>
+            <h5 class="card-title">Taille de barbe</h5>
+            <p class="card-text">Prix : 10€</p>
+            <a href="client/rendezvous.php" class="btn btn-warning">Réserver</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="card bg-dark text-white">
-          <img src="assets/coloration.jpg" class="card-img-top" alt="Coloration">
+      <div class="col-md-4">
+        <div class="card text-white mb-3">
+          <img src="assets/coloration.jpg" class="card-img-top" alt="Soin">
           <div class="card-body">
             <h5 class="card-title">Coloration</h5>
-            <p class="card-text">Changement de couleur avec des produits de qualité.</p>
-            <p><strong>Prix : 25€</strong></p>
+            <p class="card-text">Prix : 20€</p>
+            <a href="client/rendezvous.php" class="btn btn-warning">Réserver</a>
           </div>
         </div>
       </div>

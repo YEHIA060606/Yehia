@@ -1,3 +1,4 @@
+<?php include 'navbar.php'; ?>
 <?php
 require 'config.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -33,6 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </style>
 </head>
 <body>
+
   <div class="form-box">
     <h2 class="text-center mb-4">Contactez-nous</h2>
     <?php if (isset($confirmation)) echo "<p class='text-success'>$confirmation</p>"; ?>

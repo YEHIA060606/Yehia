@@ -43,6 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </style>
 </head>
 <body>
+
+<a href="/Yehia/welcome.php" style="position: fixed; top: 10px; left: 10px; background-color: #444; color: white; padding: 10px; border-radius: 5px; text-decoration: none;">
+    ⬅ Retour à l'accueil
+</a>
+
   <div class="form-box">
     <h2 class="text-center">Prendre un rendez-vous</h2>
     <?php if (isset($message)) echo "<p class='text-success'>$message</p>"; ?>

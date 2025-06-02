@@ -40,7 +40,8 @@ $rendezvous = $stmt->fetchAll();
           <td><?= $rdv['heure_rdv'] ?></td>
           <td><?= $rdv['prestation'] ?></td>
           <td>
-            <a href="supprimer_rdv.php?id=<?= $rdv['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer ce rendez-vous ?')">Supprimer</a>
+            <a href="modifier_rdv.php?id=<?= $rdv['id'] ?>" class="btn btn-sm btn-warning">Modifier</a>
+            <a href="../supprimer_rdv.php?id=<?= $rdv['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer ce rendez-vous ?')">Supprimer</a>
           </td>
         </tr>
         <?php endforeach; ?>
