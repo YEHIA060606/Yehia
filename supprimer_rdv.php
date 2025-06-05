@@ -8,5 +8,6 @@ if (isset($_GET['id'])) {
 }
 
 header("Location: admin/admin_rendezvous.php");
+header("Location: client/mes_rendezvous.php");
 exit();
 ?>

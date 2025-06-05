@@ -23,6 +23,9 @@ session_start();
     }
   </style>
 </head>
+<a href="/Yehia/welcome.php" style="position: fixed; top: 10px; left: 10px; background-color: #444; color: white; padding: 10px; border-radius: 5px; text-decoration: none;">
+    ⬅ Retour à l'accueil
+</a>
 <body class="p-4">
   <div class="container">
     <h1 class="mb-4 text-center">Nos Prestations</h1>

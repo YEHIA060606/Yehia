@@ -57,8 +57,12 @@
         <div class="card-body">
           <h5 class="card-title">Coupe</h5>
           <p class="card-text">15€ - Coupe homme tendance</p>
-          <a href="login.php" class="btn btn-warning">Reserver</a>
         </div>
+            <a class="btn btn-primary" href="<?php 
+        echo isset($_SESSION['user_id']) && $_SESSION['user_role'] === 'client' 
+            ? 'client/rendezvous.php' 
+            : 'login.php'; 
+    ?>">Réserver</a>
       </div>
     </div>
     <div class="col-md-4 mb-4">
@@ -67,8 +71,12 @@
         <div class="card-body">
           <h5 class="card-title">Barbe</h5>
           <p class="card-text">10€ - Taille et soin barbe</p>
-          <a href= "login.php" class="btn btn-warning">Reserver</a>
         </div>
+            <a class="btn btn-primary" href="<?php 
+        echo isset($_SESSION['user_id']) && $_SESSION['user_role'] === 'client' 
+            ? 'client/rendezvous.php' 
+            : 'login.php'; 
+    ?>">Réserver</a>
       </div>
     </div>
     <div class="col-md-4 mb-4">
@@ -77,7 +85,13 @@
         <div class="card-body">
           <h5 class="card-title">Coloration</h5>
           <p class="card-text">25€ - Coloration complète</p>
-          <a href="login.php" class="btn btn-warning">Reserver</a>
+  </div>
+    <a class="btn btn-primary" href="<?php 
+        echo isset($_SESSION['user_id']) && $_SESSION['user_role'] === 'client' 
+            ? 'client/rendezvous.php' 
+            : 'login.php'; 
+    ?>">Réserver</a>
+</div>
         </div>
       </div>
     </div>

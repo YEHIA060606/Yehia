@@ -44,6 +44,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <title>Modifier Rendez-vous</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+<a href="/Yehia/client/mes_rendezvous.php" style="position: fixed; top: 10px; left: 10px; background-color: #444; color: white; padding: 10px; border-radius: 5px; text-decoration: none;">
+    ⬅ Retour à l'accueil
+</a>
 <body class="bg-dark text-white p-4">
 <div class="container">
     <h2 class="text-center mb-4">Modifier le Rendez-vous</h2>
@@ -65,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </select>
         </div>
         <button type="submit" class="btn btn-warning">Modifier</button>
-        <a href="mes_rendezvous.php" class="btn btn-outline-light">Annuler</a>
+        <a href="../supprimer_rdv.php?id=<?= $rdv['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer ce rendez-vous ?')">Supprimer</a>
     </form>
 </div>
 </body>
