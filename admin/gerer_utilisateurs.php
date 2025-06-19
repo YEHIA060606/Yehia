@@ -33,7 +33,7 @@ $users = $stmt->fetchAll();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #000;
+            background-color: #1a1a1a;
             color: #fff;
         }
         .table {
@@ -48,12 +48,25 @@ $users = $stmt->fetchAll();
         .text-muted {
             color: #ccc !important;
         }
+        .btn-outline-light {
+            font-size: 0.9rem;
+            padding: 0.25rem 0.5rem;
+        }
+        h2 {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
     </style>
 </head>
-<body class="container mt-5">
-    <a href="../welcome.php" class="btn btn-secondary mb-4">⬅ Retour</a>
-    <h2 class="mb-4">👥 Gérer les utilisateurs</h2>
+<body class="container mt-4">
 
+    <!-- En-tête avec bouton retour + titre -->
+    <div class="d-flex align-items-center justify-content-start mb-4 gap-3">
+        <a href="../welcome.php" class="btn btn-sm btn-outline-light">⬅ Retour</a>
+        <h2 class="mb-0">Gérer les utilisateurs</h2>
+    </div>
+
+    <!-- Tableau des utilisateurs -->
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
             <tr>

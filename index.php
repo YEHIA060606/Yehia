@@ -6,36 +6,63 @@
   <title>Salon Yehia - Accueil</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    body {
-      background-color: #f8f9fa;
-    }
-    .navbar {
-      background-color: #000;
-    }
-    .navbar a {
-      color: white !important;
-    }
-    .hero {
-      background: url('assets/background.png') no-repeat center center;
-      background-size: cover;
-      height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-shadow: 1px 1px 3px black;
-    }
-    .prestation-card {
-      border: none;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-    .prestation-card img {
-      height: 200px;
-      object-fit: cover;
-    }
-  </style>
+<style>
+  body {
+    background-color: #f8f9fa;
+  }
+
+  .navbar {
+    background-color: #000;
+  }
+
+  .navbar a {
+    color: white !important;
+  }
+
+  .hero {
+    background: url('assets/background.png') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 1px 1px 3px black;
+  }
+
+  .prestation-card {
+    background-color: transparent; /* pas de fond blanc */
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4); /* joli effet */
+    transition: transform 0.3s ease;
+    height: 100%; /* chaque carte prend toute la hauteur */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .prestation-card:hover {
+    transform: scale(1.03);
+  }
+
+  .prestation-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .prestation-card .card-body {
+    flex-grow: 1;
+    background-color: #fff;
+    padding: 1rem;
+  }
+
+  .prestation-card .btn {
+    border-radius: 0;
+    width: 100%;
+  }
+</style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg">
@@ -45,7 +72,7 @@
 </nav>
 
 <header class="hero text-center">
-  <h1>Bienvenue chez le Salon Yehia</h1>
+  <h1>Bienvenue chez Salon Yehia</h1>
 </header>
 
 <section class="container mt-5">

@@ -45,5 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <button type="submit" class="btn btn-primary w-100">Envoyer</button>
     </form>
   </div>
+      <div class="text-center mt-4">
+        <a href="welcome.php" class="btn btn-outline-light">Retour à l'accueil</a>
+    </div>
 </body>
 </html>

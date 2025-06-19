@@ -50,11 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   </style>
 </head>
 <body>
-
-<a href="/Yehia/index.php" style="position: fixed; top: 10px; left: 10px; background-color: #444; color: white; padding: 10px; border-radius: 5px; text-decoration: none;">
-    ⬅ Retour à l'accueil
-</a>
-
 <div class="form-box">
   <h2 class="text-center mb-4">Connexion</h2>
   <?php if (isset($error)) echo "<p class='text-danger'>$error</p>"; ?>
@@ -67,7 +62,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <button type="submit" class="btn btn-primary w-100 mb-3">Se connecter</button>
     <p class="text-center">Vous n'avez pas de compte ? <a href="register.php">Créer un compte</a></p>
   </form>
-</div>
+  
+<a href="index.php" style="position: fixed; top: 10px; left: 10px; background-color: #444; color: white; padding: 10px; border-radius: 5px; text-decoration: none;">
+    ⬅ Retour à l'accueil
+</a>
 
 </body>
 </html>
