@@ -27,13 +27,31 @@ $users = $stmt->fetchAll();
 
 <!DOCTYPE html>
 <html lang="fr">
-        <a href="../welcome.php" class="btn btn-secondary mt-3">⬅ Retour </a>
 <head>
     <meta charset="UTF-8">
     <title>Gérer les utilisateurs</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+        .table {
+            color: #fff;
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #1a1a1a;
+        }
+        .table-striped tbody tr:nth-of-type(even) {
+            background-color: #2c2c2c;
+        }
+        .text-muted {
+            color: #ccc !important;
+        }
+    </style>
 </head>
 <body class="container mt-5">
+    <a href="../welcome.php" class="btn btn-secondary mb-4">⬅ Retour</a>
     <h2 class="mb-4">👥 Gérer les utilisateurs</h2>
 
     <table class="table table-striped table-bordered">
