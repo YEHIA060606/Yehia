@@ -77,7 +77,7 @@ include 'navbar.php';
 </nav>
 
 <header class="hero text-center">
-  <h1>Bienvenue chez Salon Yehia</h1>
+  <h1>Bienvenue chez Salon Dream Team</h1>
 </header>
 
 <section class="container mt-5">
