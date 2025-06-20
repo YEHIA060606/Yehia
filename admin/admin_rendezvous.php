@@ -1,12 +1,19 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
     header("Location: ../login.php");
     exit;
 }
+
 require '../config.php';
 
-$stmt = $pdo->query("SELECT r.id, r.date_rdv, r.heure_rdv, r.prestation, u.name FROM rendezvous r JOIN users u ON r.user_id = u.id ORDER BY r.date_rdv, r.heure_rdv");
+$stmt = $pdo->query("SELECT r.id, r.date_rdv, r.heure_rdv, r.prestation, u.name 
+                     FROM rendezvous r 
+                     JOIN users u ON r.user_id = u.id 
+                     ORDER BY r.date_rdv, r.heure_rdv");
 $rendezvous = $stmt->fetchAll();
 ?>
 
@@ -59,7 +66,7 @@ $rendezvous = $stmt->fetchAll();
                     <td><?= $rdv['prestation'] ?></td>
                     <td>
                         <a href="modifier_rdv.php?id=<?= $rdv['id'] ?>" class="btn btn-sm btn-warning">Modifier</a>
-                        <a href="../supprimer_rdv.php?id=<?= $rdv['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer ce rendez-vous ?')">Supprimer</a>
+                        <a href="supprimer_rdv.php?id=<?= $rdv['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Supprimer ce rendez-vous ?')">Supprimer</a>
                         <a href="ajouter_rdv.php" class="btn btn-sm btn-success">Ajouter</a>
                     </td>
                 </tr>
@@ -69,3 +76,4 @@ $rendezvous = $stmt->fetchAll();
     </div>
 </body>
 </html>
+
